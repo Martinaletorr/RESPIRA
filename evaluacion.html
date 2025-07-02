@@ -12,6 +12,8 @@
     <form id="formularioGAD">
       <p>Indicá con qué frecuencia has experimentado lo siguiente en las últimas 2 semanas:</p>
 
+      <!-- Las 7 preguntas (dejadas igual que estaban) -->
+
       <div class="pregunta">
         <label>1. Sentirse nervioso, ansioso o al borde de los nervios:</label><br/>
         <select name="q1">
@@ -31,8 +33,6 @@
           <option value="3">Casi todos los días</option>
         </select>
       </div>
-
-      <!-- Repetí esto para q3 a q7 cambiando la pregunta -->
 
       <div class="pregunta">
         <label>3. Preocuparse por demasiadas cosas diferentes:</label><br/>
@@ -88,9 +88,9 @@
     </form>
 
     <div id="resultado" style="margin-top: 20px;"></div>
+    <div id="botonDepresion" style="margin-top: 20px;"></div>
   </div>
-  <a href="depresion.html" class="boton">Continuar con depresión</a>
-  <div style="margin-top: 20px;">
+
   <script>
     function calcularGAD() {
       const form = document.getElementById('formularioGAD');
@@ -107,7 +107,11 @@
 
       document.getElementById("resultado").innerHTML =
         `<p><strong>Puntaje total:</strong> ${total} / 21</p><p><strong>Nivel:</strong> ${nivel}</p>`;
+
+      document.getElementById("botonDepresion").innerHTML =
+        `<a href="depresion.html" class="boton">Continuar con depresión</a>`;
     }
   </script>
 </body>
 </html>
+
