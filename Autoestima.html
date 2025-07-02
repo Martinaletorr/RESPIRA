@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Evaluación de Autoestima - Rosenberg</title>
+  <link rel="stylesheet" href="stylo.css" />
+</head>
+<body>
+  <div class="contenedor">
+    <h2>Evaluación de Autoestima (Escala de Rosenberg)</h2>
+    <p>Indicá con qué grado estás de acuerdo con las siguientes afirmaciones:</p>
+
+    <form id="formularioAutoestima">
+      <!-- Preguntas 1 a 5 (positivas) -->
+      <div class="pregunta">
+        <label>1. Siento que soy una persona valiosa, al menos en igualdad con los demás.</label><br/>
+        <select name="q1">
+          <option value="3">Totalmente de acuerdo</option>
+          <option value="2">De acuerdo</option>
+          <option value="1">En desacuerdo</option>
+          <option value="0">Totalmente en desacuerdo</option>
+        </select>
+      </div>
+
+      <div class="pregunta">
+        <label>2. Siento que tengo un buen número de cualidades.</label><br/>
+        <select name="q2">
+          <option value="3">Totalmente de acuerdo</option>
+          <option value="2">De acuerdo</option>
+          <option value="1">En desacuerdo</option>
+          <option value="0">Totalmente en desacuerdo</option>
+        </select>
+      </div>
+
+      <div class="pregunta">
+        <label>3. En general, me inclino a pensar que soy un fracasado/a.</label><br/>
+        <select name="q3">
+          <option value="0">Totalmente de acuerdo</option>
+          <option value="1">De acuerdo</option>
+          <option value="2">En desacuerdo</option>
+          <option value="3">Totalmente en desacuerdo</option>
+        </select>
+      </div>
+
+      <div class="pregunta">
+        <label>4. Soy capaz de hacer las cosas tan bien como la mayoría de las personas.</label><br/>
+        <select name="q4">
+          <option value="3">Totalmente de acuerdo</option>
+          <option value="2">De acuerdo</option>
+          <option value="1">En desacuerdo</option>
+          <option value="0">Totalmente en desacuerdo</option>
+        </select>
+      </div>
+
+      <div class="pregunta">
+        <label>5. Siento que no tengo mucho de lo que estar orgulloso/a.</label><br/>
+        <select name="q5">
+          <option value="0">Totalmente de acuerdo</option>
+          <option value="1">De acuerdo</option>
+          <option value="2">En desacuerdo</option>
+          <option value="3">Totalmente en desacuerdo</option>
+        </select>
+      </div>
+
+      <!-- Preguntas 6 a 10 (mixtas) -->
+      <div class="pregunta">
+        <label>6. Tengo una actitud positiva hacia mí mismo/a.</label><br/>
+        <select name="q6">
+          <option value="3">Totalmente de acuerdo</option>
+          <option value="2">De acuerdo</option>
+          <option value="1">En desacuerdo</option>
+          <option value="0">Totalmente en desacuerdo</option>
+        </select>
+      </div>
+
+      <div class="pregunta">
+        <label>7. En conjunto, estoy satisfecho/a conmigo mismo/a.</label><br/>
+        <select name="q7">
+          <option value="3">Totalmente de acuerdo</option>
+          <option value="2">De acuerdo</option>
+          <option value="1">En desacuerdo</option>
+          <option value="0">Totalmente en desacuerdo</option>
+        </select>
+      </div>
+
+      <div class="pregunta">
+        <label>8. Desearía tener más respeto por mí mismo/a.</label><br/>
+        <select name="q8">
+          <option value="0">Totalmente de acuerdo</option>
+          <option value="1">De acuerdo</option>
+          <option value="2">En desacuerdo</option>
+          <option value="3">Totalmente en desacuerdo</option>
+        </select>
+      </div>
+
+      <div class="pregunta">
+        <label>9. A veces me siento realmente inútil.</label><br/>
+        <select name="q9">
+          <option value="0">Totalmente de acuerdo</option>
+          <option value="1">De acuerdo</option>
+          <option value="2">En desacuerdo</option>
+          <option value="3">Totalmente en desacuerdo</option>
+        </select>
+      </div>
+
+      <div class="pregunta">
+        <label>10. A veces pienso que no sirvo para nada.</label><br/>
+        <select name="q10">
+          <option value="0">Totalmente de acuerdo</option>
+          <option value="1">De acuerdo</option>
+          <option value="2">En desacuerdo</option>
+          <option value="3">Totalmente en desacuerdo</option>
+        </select>
+      </div>
+
+      <button type="button" class="boton" onclick="calcularAutoestima()">Ver resultado</button>
+    </form>
+
+    <div id="resultado" style="margin-top: 20px;"></div>
+  </div>
+
+  <script>
+    function calcularAutoestima() {
+      const form = document.getElementById('formularioAutoestima');
+      let total = 0;
+
+      for (let i = 1; i <= 10; i++) {
+        total += parseInt(form["q" + i].value);
+      }
+
+      let nivel = "";
+      if (total <= 15) nivel = "Autoestima baja";
+      else if (total <= 25) nivel = "Autoestima media";
+      else nivel = "Autoestima alta";
+
+      document.getElementById("resultado").innerHTML =
+        `<p><strong>Puntaje total:</strong> ${total} / 30</p><p><strong>Nivel:</strong> ${nivel}</p>`;
+    }
+  </script>
+</body>
+</html>
+
+
