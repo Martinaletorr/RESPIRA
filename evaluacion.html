@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Evaluación de Ansiedad - GAD-7</title>
+  <link rel="stylesheet" href="stylo.css" />
+</head>
+<body>
+  <div class="contenedor">
+    <h2>Evaluación de Ansiedad (GAD-7)</h2>
+    <form id="formularioGAD">
+      <p>Indicá con qué frecuencia has experimentado lo siguiente en las últimas 2 semanas:</p>
+
+      <div class="pregunta">
+        <label>1. Sentirse nervioso, ansioso o al borde de los nervios:</label><br/>
+        <select name="q1">
+          <option value="0">Nunca</option>
+          <option value="1">Varios días</option>
+          <option value="2">Más de la mitad de los días</option>
+          <option value="3">Casi todos los días</option>
+        </select>
+      </div>
+
+      <div class="pregunta">
+        <label>2. No poder dejar de preocuparse:</label><br/>
+        <select name="q2">
+          <option value="0">Nunca</option>
+          <option value="1">Varios días</option>
+          <option value="2">Más de la mitad de los días</option>
+          <option value="3">Casi todos los días</option>
+        </select>
+      </div>
+
+      <!-- Repetí esto para q3 a q7 cambiando la pregunta -->
+
+      <div class="pregunta">
+        <label>3. Preocuparse por demasiadas cosas diferentes:</label><br/>
+        <select name="q3">
+          <option value="0">Nunca</option>
+          <option value="1">Varios días</option>
+          <option value="2">Más de la mitad de los días</option>
+          <option value="3">Casi todos los días</option>
+        </select>
+      </div>
+
+      <div class="pregunta">
+        <label>4. Dificultad para relajarse:</label><br/>
+        <select name="q4">
+          <option value="0">Nunca</option>
+          <option value="1">Varios días</option>
+          <option value="2">Más de la mitad de los días</option>
+          <option value="3">Casi todos los días</option>
+        </select>
+      </div>
+
+      <div class="pregunta">
+        <label>5. Estar tan inquieto que es difícil quedarse quieto:</label><br/>
+        <select name="q5">
+          <option value="0">Nunca</option>
+          <option value="1">Varios días</option>
+          <option value="2">Más de la mitad de los días</option>
+          <option value="3">Casi todos los días</option>
+        </select>
+      </div>
+
+      <div class="pregunta">
+        <label>6. Irritarse fácilmente o enojarse con facilidad:</label><br/>
+        <select name="q6">
+          <option value="0">Nunca</option>
+          <option value="1">Varios días</option>
+          <option value="2">Más de la mitad de los días</option>
+          <option value="3">Casi todos los días</option>
+        </select>
+      </div>
+
+      <div class="pregunta">
+        <label>7. Sentir miedo como si algo horrible fuera a pasar:</label><br/>
+        <select name="q7">
+          <option value="0">Nunca</option>
+          <option value="1">Varios días</option>
+          <option value="2">Más de la mitad de los días</option>
+          <option value="3">Casi todos los días</option>
+        </select>
+      </div>
+
+      <button type="button" class="boton" onclick="calcularGAD()">Ver resultado</button>
+    </form>
+
+    <div id="resultado" style="margin-top: 20px;"></div>
+  </div>
+  <a href="depresion.html" class="boton">Continuar con depresión</a>
+  <div style="margin-top: 20px;">
+  <script>
+    function calcularGAD() {
+      const form = document.getElementById('formularioGAD');
+      let total = 0;
+      for (let i = 1; i <= 7; i++) {
+        total += parseInt(form["q" + i].value);
+      }
+
+      let nivel = "";
+      if (total <= 4) nivel = "Ansiedad mínima";
+      else if (total <= 9) nivel = "Ansiedad leve";
+      else if (total <= 14) nivel = "Ansiedad moderada";
+      else nivel = "Ansiedad grave";
+
+      document.getElementById("resultado").innerHTML =
+        `<p><strong>Puntaje total:</strong> ${total} / 21</p><p><strong>Nivel:</strong> ${nivel}</p>`;
+    }
+  </script>
+</body>
+</html>
