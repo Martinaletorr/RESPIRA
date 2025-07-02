@@ -12,8 +12,6 @@
     <form id="formularioGAD">
       <p>Indicá con qué frecuencia has experimentado lo siguiente en las últimas 2 semanas:</p>
 
-      <!-- Las 7 preguntas (dejadas igual que estaban) -->
-
       <div class="pregunta">
         <label>1. Sentirse nervioso, ansioso o al borde de los nervios:</label><br/>
         <select name="q1">
@@ -88,7 +86,7 @@
     </form>
 
     <div id="resultado" style="margin-top: 20px;"></div>
-    <div id="botonDepresion" style="margin-top: 20px;"></div>
+    <div id="botonesExtras" style="margin-top: 20px;"></div>
   </div>
 
   <script>
@@ -108,8 +106,10 @@
       document.getElementById("resultado").innerHTML =
         `<p><strong>Puntaje total:</strong> ${total} / 21</p><p><strong>Nivel:</strong> ${nivel}</p>`;
 
-      document.getElementById("botonDepresion").innerHTML =
-        `<a href="depresion.html" class="boton">Continuar con depresión</a>`;
+      document.getElementById("botonesExtras").innerHTML = `
+        <a href="index.html" class="boton">Volver a la página principal</a>
+        <a href="TecnicasAnsiedad.html" class="boton">Ver técnicas para la ansiedad</a>
+      `;
     }
   </script>
 </body>
