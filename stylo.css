@@ -8,7 +8,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(to bottom, #eaf4f4, #ffffff);
+  background: linear-gradient(to bottom, #d4f1f9, #ffffff);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,8 +17,8 @@ body {
 }
 
 .contenedor {
-  background-color: #ffffffcc;
-  backdrop-filter: blur(10px);
+  background-color: #ffffffcc; /* fondo blanco con transparencia */
+  backdrop-filter: blur(10px); /* efecto vidrio */
   border-radius: 16px;
   padding: 40px;
   max-width: 600px;
@@ -30,7 +30,7 @@ body {
 .titulo {
   font-size: 48px;
   font-weight: 600;
-  color: #1e3a5f;
+  color: #1e3a5f; /* azul profundo */
   margin-bottom: 16px;
 }
 
@@ -41,7 +41,7 @@ body {
 }
 
 .boton {
-  background-color: #3196ff;
+  background-color: #28c2ff; /* azul vibrante */
   color: white;
   border: none;
   padding: 14px 32px;
@@ -49,11 +49,14 @@ body {
   border-radius: 32px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.1s ease;
-  box-shadow: 0 4px 12px rgba(49, 150, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(40, 194, 255, 0.3);
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px 5px; /* separa los botones entre sí */
 }
 
 .boton:hover {
-  background-color: #1976d2;
+  background-color: #1292ce;
   transform: scale(1.03);
 }
 
@@ -86,4 +89,9 @@ h2 {
   font-size: 18px;
   color: #1e3a5f;
   font-weight: 600;
+}
+
+/* ✅ NUEVA CLASE: espaciado entre botones del index */
+.opcion-formulario {
+  margin-bottom: 16px;
 }
