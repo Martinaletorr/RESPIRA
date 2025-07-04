@@ -9,7 +9,6 @@
 <body>
   <div class="contenedor">
     <h2>Semana 1: Respiración Consciente</h2>
-
     <p>Esta semana nos enfocaremos en técnicas de respiración consciente para reducir la ansiedad. Se recomienda practicar diariamente.</p>
 
     <h3>1. Introducción a la Respiración Consciente</h3>
@@ -25,8 +24,7 @@
       allowfullscreen>
     </iframe>
 
-    <h3>3. Ejercicio Diario</h3>
-    <p>Realizá el siguiente ejercicio durante 5 minutos:</p>
+    <h3>3. Ejercicio Diario de Respiración</h3>
     <ul>
       <li>Inhalá profundamente en 4 segundos</li>
       <li>Sostené el aire durante 2 segundos</li>
@@ -35,11 +33,95 @@
     </ul>
 
     <h3>4. Diario Emocional</h3>
-    <p>Al final del día, registrá cómo te sentiste después de realizar el ejercicio.</p>
+    <p>Al final del día, registrá cómo te sentiste después de realizar el ejercicio:</p>
     <textarea rows="6" cols="50" placeholder="Escribí aquí tus sensaciones..."></textarea>
+
+    <h3>5. Frase motivacional del día</h3>
+    <blockquote><em>"Respirar no cambia lo que pasa afuera, pero sí lo que pasa dentro tuyo."</em></blockquote>
+
+    <h3>6. ¿Sabías que...?</h3>
+    <p>La respiración profunda activa el nervio vago, el cual ayuda a disminuir la frecuencia cardíaca y a relajar el cuerpo.</p>
+
+    <h3>7. Mini test: ¿Cómo estuviste hoy?</h3>
+    <form id="miniTest">
+      <label>¿Sentiste ansiedad hoy?</label><br/>
+      <select name="ansiedad">
+        <option value="0">No</option>
+        <option value="1">Sí, leve</option>
+        <option value="2">Sí, intensa</option>
+      </select><br/><br/>
+
+      <label>¿Pudiste usar alguna técnica?</label><br/>
+      <select name="tecnica">
+        <option value="0">No</option>
+        <option value="1">Sí</option>
+      </select><br/><br/>
+
+      <button type="button" onclick="calcularMiniTest()">Ver resultado</button>
+    </form>
+    <div id="resultadoMiniTest" style="margin-top: 15px;"></div>
+
+    <h3>8. Técnica Complementaria: 5-4-3-2-1</h3>
+    <p>Esta técnica de anclaje te ayuda a volver al presente utilizando tus sentidos. En momentos de ansiedad, identificá:</p>
+    <ul>
+      <li><strong>5</strong> cosas que podés ver</li>
+      <li><strong>4</strong> cosas que podés tocar</li>
+      <li><strong>3</strong> cosas que podés oír</li>
+      <li><strong>2</strong> cosas que podés oler</li>
+      <li><strong>1</strong> cosa que podés saborear</li>
+    </ul>
+    <p>Este ejercicio entrena tu atención y reduce pensamientos intrusivos.</p>
+
+    <h3>9. Checklist de práctica</h3>
+    <p>Marcá lo que lograste hoy:</p>
+    <form id="checklist">
+      <label><input type="checkbox" /> Hice el ejercicio de respiración</label><br/>
+      <label><input type="checkbox" /> Escuché el audio guiado</label><br/>
+      <label><input type="checkbox" /> Escribí en el diario emocional</label><br/>
+      <label><input type="checkbox" /> Apliqué la técnica 5-4-3-2-1</label>
+    </form>
+
+    <h3>10. ¿Qué puedo esperar sentir después de aplicar estas técnicas?</h3>
+    <p>Al finalizar esta primera semana, es esperable que empieces a notar una mayor conexión con tu cuerpo y un leve descenso en los niveles de tensión y ansiedad. Tal vez no desaparezca del todo, pero sí podrías sentirte:</p>
+    <ul>
+      <li>Más presente en el aquí y ahora</li>
+      <li>Con mayor sensación de control sobre tu respiración y cuerpo</li>
+      <li>Con más herramientas para enfrentar momentos de ansiedad</li>
+      <li>Menos reactivo/a ante estímulos estresantes</li>
+    </ul>
+
+    <p><strong>¿Con qué frecuencia practicar?</strong></p>
+    <ul>
+      <li><strong>Respiración consciente:</strong> Al menos 2 veces por día (mañana y noche), durante 5 minutos</li>
+      <li><strong>Técnica 5-4-3-2-1:</strong> Cada vez que sientas ansiedad intensa</li>
+      <li><strong>Diario emocional:</strong> Una vez al día, preferentemente por la noche</li>
+      <li><strong>Audio de relajación:</strong> 1 vez por día o cuando lo necesites</li>
+    </ul>
 
     <br><br>
     <a href="TecnicasAnsiedad.html" class="boton">Volver a Técnicas</a>
   </div>
+
+  <script>
+    function calcularMiniTest() {
+      const form = document.getElementById('miniTest');
+      const ansiedad = parseInt(form.ansiedad.value);
+      const tecnica = parseInt(form.tecnica.value);
+
+      let mensaje = "";
+
+      if (ansiedad === 0 && tecnica === 1) {
+        mensaje = "¡Muy bien! Hoy estuviste en calma y usaste herramientas efectivas.";
+      } else if (ansiedad > 0 && tecnica === 1) {
+        mensaje = "Tuviste ansiedad pero aplicaste técnicas. ¡Buen trabajo! Seguí practicando.";
+      } else {
+        mensaje = "No usaste técnicas hoy. Recordá que la práctica diaria mejora los resultados.";
+      }
+
+      document.getElementById("resultadoMiniTest").innerText = mensaje;
+    }
+  </script>
 </body>
 </html>
+
+
