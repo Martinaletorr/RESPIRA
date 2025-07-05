@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Semana 2 - Técnicas para la Ansiedad</title>
+  <link rel="stylesheet" href="semana2.css" />
+</head>
+<body>
+  <!-- Música de fondo -->
+  <audio autoplay loop>
+    <source src="relax.mp3" type="audio/mpeg" />
+    Tu navegador no soporta la reproducción de audio.
+  </audio>
+
+  <div class="contenedor">
+    <h2>Semana 2: Reencuadre Cognitivo</h2>
+    <p>Esta semana nos enfocaremos en identificar pensamientos automáticos negativos y aprender a transformarlos por otros más realistas y útiles.</p>
+
+    <h3>1. ¿Qué es el Reencuadre Cognitivo?</h3>
+    <p>Es una técnica de la terapia cognitivo-conductual que te ayuda a ver situaciones desde otra perspectiva más constructiva.</p>
+
+    <h3>2. Video Explicativo</h3>
+    <p>Aprendé cómo funciona el reencuadre cognitivo y cómo aplicarlo en tu vida diaria:</p>
+    <iframe width="100%" height="315"
+      src="https://www.youtube.com/embed/QZpECpHTsQg"
+      title="¿Qué es la Reestructuración Cognitiva?"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+
+    <h3>3. Ejercicio Práctico</h3>
+    <p>Escribí una situación estresante que viviste hoy. Luego completá:</p>
+    <textarea rows="2" cols="50" placeholder="Situación..."></textarea><br>
+    <textarea rows="2" cols="50" placeholder="Pensamiento automático..."></textarea><br>
+    <textarea rows="2" cols="50" placeholder="Evidencia a favor o en contra..."></textarea><br>
+    <textarea rows="2" cols="50" placeholder="Cómo reinterpretarlo positivamente..."></textarea>
+
+    <h3>4. Diario Emocional</h3>
+    <p>¿Cómo te sentiste antes y después del ejercicio?</p>
+    <textarea rows="4" cols="50" placeholder="Escribí aquí..."></textarea>
+
+    <h3>5. Frase motivacional del día</h3>
+    <blockquote><em>"No podés controlar todos tus pensamientos, pero sí cómo respondés a ellos."</em></blockquote>
+
+    <h3>6. ¿Sabías que...?</h3>
+    <p>Identificar y cambiar pensamientos automáticos negativos reduce significativamente la ansiedad y mejora el estado de ánimo.</p>
+
+    <h3>7. Mini test del día</h3>
+    <form id="miniTest">
+      <label>¿Tuviste pensamientos negativos hoy?</label><br/>
+      <select name="pensamiento">
+        <option value="0">No</option>
+        <option value="1">Sí, algunos</option>
+        <option value="2">Sí, muchos</option>
+      </select><br><br/>
+      <label>¿Reinterpretaste alguno?</label><br/>
+      <select name="reencuadre">
+        <option value="0">No</option>
+        <option value="1">Sí</option>
+      </select><br><br/>
+      <button type="button" onclick="calcularMiniTest()">Ver resultado</button>
+    </form>
+    <div id="resultadoMiniTest" style="margin-top:15px;"></div>
+
+    <h3>8. Checklist de práctica</h3>
+    <form id="checklist">
+      <label><input type="checkbox" /> Vi el video explicativo</label><br/>
+      <label><input type="checkbox" /> Hice el ejercicio de reencuadre</label><br/>
+      <label><input type="checkbox" /> Escribí en el diario emocional</label>
+    </form>
+
+    <br><br>
+    <a href="TecnicasAnsiedad.html" class="boton">Volver a Técnicas</a>
+  </div>
+
+  <script>
+    function calcularMiniTest() {
+      const form = document.getElementById('miniTest');
+      const p = parseInt(form.pensamiento.value);
+      const r = parseInt(form.reencuadre.value);
+      let msg = "";
+      if (p === 0) msg = "¡Excelente! No tuviste pensamientos negativos.";
+      else if (p > 0 && r === 1) msg = "Bien hecho: identificaste y reencuadraste pensamientos.";
+      else msg = "Recordá que reencuadrar pensamientos es clave para reducir la ansiedad. ¡Seguilo intentando!";
+      document.getElementById("resultadoMiniTest").innerText = msg;
+    }
+
+    document.querySelectorAll('#checklist input[type="checkbox"]').forEach((box, i) => {
+      box.checked = localStorage.getItem('sem2check' + i) === 'true';
+      box.addEventListener('change', () => {
+        localStorage.setItem('sem2check' + i, box.checked);
+      });
+    });
+  </script>
+</body>
+</html>
+
