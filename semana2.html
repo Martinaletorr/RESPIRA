@@ -22,32 +22,50 @@
 
     <h3>2. Video Explicativo</h3>
     <p>Aprendé cómo funciona el reencuadre cognitivo y cómo aplicarlo en tu vida diaria:</p>
-    <iframe width="100%" height="315"
-      src="https://www.youtube.com/embed/QZpECpHTsQg"
-      title="¿Qué es la Reestructuración Cognitiva?"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+    <iframe width="100%" height="315" src="https://www.youtube.com/embed/QZpECpHTsQg" title="¿Qué es la Reestructuración Cognitiva?" frameborder="0" allowfullscreen></iframe>
 
-    <h3>3. Ejercicio Práctico</h3>
+    <h3>3. Identificá la distorsión cognitiva</h3>
+    <select>
+      <option value="">Seleccioná una distorsión...</option>
+      <option>Pensamiento todo o nada</option>
+      <option>Catastrofismo</option>
+      <option>Filtro mental</option>
+      <option>Personalización</option>
+      <option>Lectura de mente</option>
+      <option>Generalización excesiva</option>
+    </select>
+
+    <h3>4. Ejercicio Práctico de Reencuadre</h3>
     <p>Escribí una situación estresante que viviste hoy. Luego completá:</p>
-    <textarea rows="2" cols="50" placeholder="Situación..."></textarea><br>
-    <textarea rows="2" cols="50" placeholder="Pensamiento automático..."></textarea><br>
-    <textarea rows="2" cols="50" placeholder="Evidencia a favor o en contra..."></textarea><br>
-    <textarea rows="2" cols="50" placeholder="Cómo reinterpretarlo positivamente..."></textarea>
+    <textarea rows="2" placeholder="Situación..."></textarea><br>
+    <textarea rows="2" placeholder="Pensamiento automático..."></textarea><br>
+    <textarea rows="2" placeholder="Evidencia a favor o en contra..."></textarea><br>
+    <textarea rows="2" placeholder="Cómo reinterpretarlo positivamente..."></textarea>
 
-    <h3>4. Diario Emocional</h3>
+    <h3>5. Diario Emocional</h3>
     <p>¿Cómo te sentiste antes y después del ejercicio?</p>
-    <textarea rows="4" cols="50" placeholder="Escribí aquí..."></textarea>
+    <textarea rows="4" placeholder="Escribí aquí..."></textarea>
 
-    <h3>5. Frase motivacional del día</h3>
+    <h3>6. Simulador de diálogo interno</h3>
+    <textarea rows="2" placeholder="¿Qué te dijiste a vos mismo?"></textarea><br>
+    <textarea rows="2" placeholder="¿Qué te dirías desde una mirada más realista y amable?"></textarea>
+
+    <h3>7. Frase motivacional del día</h3>
     <blockquote><em>"No podés controlar todos tus pensamientos, pero sí cómo respondés a ellos."</em></blockquote>
 
-    <h3>6. ¿Sabías que...?</h3>
+    <h3>8. Consejo del día</h3>
+    <p id="consejo"></p>
+
+    <h3>9. Tu frase guía personal</h3>
+    <input type="text" placeholder="Escribí tu propia frase">
+
+    <h3>10. Objetivo cognitivo del día</h3>
+    <input type="text" placeholder="Ej: Hoy reinterpretaré mis pensamientos con más calma.">
+
+    <h3>11. ¿Sabías que...?</h3>
     <p>Identificar y cambiar pensamientos automáticos negativos reduce significativamente la ansiedad y mejora el estado de ánimo.</p>
 
-    <h3>7. Mini test del día</h3>
+    <h3>12. Mini test del día</h3>
     <form id="miniTest">
       <label>¿Tuviste pensamientos negativos hoy?</label><br/>
       <select name="pensamiento">
@@ -64,7 +82,7 @@
     </form>
     <div id="resultadoMiniTest" style="margin-top:15px;"></div>
 
-    <h3>8. Checklist de práctica</h3>
+    <h3>13. Checklist de práctica</h3>
     <form id="checklist">
       <label><input type="checkbox" /> Vi el video explicativo</label><br/>
       <label><input type="checkbox" /> Hice el ejercicio de reencuadre</label><br/>
@@ -87,6 +105,16 @@
       document.getElementById("resultadoMiniTest").innerText = msg;
     }
 
+    // Consejo aleatorio
+    const consejos = [
+      "Los pensamientos no son hechos.",
+      "Podés tener un mal día sin que eso te defina.",
+      "No todo lo que pensás es cierto.",
+      "El reencuadre no borra la emoción, pero sí la suaviza."
+    ];
+    document.getElementById('consejo').innerText = consejos[Math.floor(Math.random() * consejos.length)];
+
+    // Guardar checklist
     document.querySelectorAll('#checklist input[type="checkbox"]').forEach((box, i) => {
       box.checked = localStorage.getItem('sem2check' + i) === 'true';
       box.addEventListener('change', () => {
@@ -96,4 +124,3 @@
   </script>
 </body>
 </html>
-
