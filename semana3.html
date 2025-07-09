@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Semana 3 - Liberá la Tensión de tu Cuerpo</title>
+  <title>Semana 3 - Técnicas para la Ansiedad</title>
   <link rel="stylesheet" href="semana3.css" />
 </head>
 <body>
+  <!-- Música de fondo -->
   <audio autoplay loop>
     <source src="relax.mp3" type="audio/mpeg" />
     Tu navegador no soporta la reproducción de audio.
@@ -14,47 +15,41 @@
 
   <div class="contenedor">
     <h2>Semana 3: Liberá la Tensión de tu Cuerpo</h2>
-    <p>Esta semana trabajarás con una poderosa herramienta: la relajación muscular progresiva. Ideal para liberar tensión acumulada y conectar con tu cuerpo.</p>
+    <p>Esta semana trabajarás con la relajación muscular progresiva: tensar y soltar grupos musculares para liberar tensión.</p>
 
-    <h3>1. Introducción a la Relajación Muscular Progresiva</h3>
-    <p>Consiste en tensar y luego relajar distintos grupos musculares de forma ordenada. Esto ayuda a tomar conciencia del cuerpo y reducir el nivel general de activación.</p>
+    <h3>1. Introducción</h3>
+    <p>Aprenderás a relajar cada zona del cuerpo de manera consciente, ayudando a reducir la activación nerviosa.</p>
 
-    <h3>2. Video explicativo</h3>
-  <iframe width="100%" height="315"
-  src="https://www.youtube.com/embed/IuPpuAGY8zU"
-  title="Relajación muscular progresiva - Técnica guiada"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
+   <h3>2. Video Explicativo</h3>
+<p>Seguí esta guía paso a paso para realizar la técnica correctamente:</p>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/j46bwtBh-00" title="Relajación muscular progresiva - técnica guiada" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
     <h3>3. Práctica diaria</h3>
-    <p>Buscá un lugar tranquilo, acostate o sentate cómodo/a. Seguí estas instrucciones:</p>
     <ul>
-      <li>Inhalá y tensá los músculos de la cara por 5 segundos, luego soltá.</li>
-      <li>Hacelo con cuello y hombros, luego brazos, pecho, abdomen, piernas y pies.</li>
-      <li>Respirá profundo entre cada zona y observá las sensaciones.</li>
+      <li>Tensá los músculos de la cara durante 5 s, luego soltá.</li>
+      <li>Repetí con cuello, hombros, brazos, pecho, abdomen, piernas y pies.</li>
+      <li>Respirá profundo entre cada ciclo y observá qué sentís.</li>
     </ul>
 
     <h3>4. Diario emocional</h3>
-    <textarea rows="4" cols="50" placeholder="¿Cómo te sentiste antes y después del ejercicio?"></textarea>
+    <textarea rows="4" cols="50" placeholder="¿Cómo te sentiste antes y después?"></textarea>
 
     <h3>5. Frase motivacional</h3>
-    <blockquote><em>"Aflojá el cuerpo, relajá la mente. Cada músculo suelto es un pensamiento que se libera."</em></blockquote>
+    <blockquote><em>"Aflojá el cuerpo, relajá la mente. Cada músculo relajado es un paso hacia la calma."</em></blockquote>
 
     <h3>6. ¿Sabías que...?</h3>
-    <p>Cuando relajás los músculos, el cerebro recibe la señal de que estás a salvo. Esto reduce la secreción de cortisol y mejora tu bienestar.</p>
+    <p>La relajación muscular progresiva reduce cortisol y disminuye la sensación de tensión :contentReference[oaicite:2]{index=2}.</p>
 
-    <h3>7. Mini test</h3>
+    <h3>7. Mini‑test</h3>
     <form id="miniTest">
-      <label>¿Te sentiste físicamente tenso/a hoy?</label><br/>
+      <label>¿Te sentiste tenso/a hoy?</label><br/>
       <select name="tension">
         <option value="0">No</option>
         <option value="1">Un poco</option>
         <option value="2">Mucho</option>
       </select><br/><br/>
-      <label>¿Realizaste la relajación progresiva?</label><br/>
+      <label>¿Hiciste la relajación?</label><br/>
       <select name="relajacion">
         <option value="0">No</option>
         <option value="1">Sí</option>
@@ -65,16 +60,21 @@
 
     <h3>8. Checklist de práctica</h3>
     <form id="checklist">
-      <label><input type="checkbox" /> Vi el video</label><br/>
-      <label><input type="checkbox" /> Practiqué la relajación</label><br/>
-      <label><input type="checkbox" /> Escribí en el diario emocional</label>
+      <label><input type="checkbox"> Vi el video</label><br/>
+      <label><input type="checkbox"> Practiqué la técnica</label><br/>
+      <label><input type="checkbox"> Escribí en el diario</label>
     </form>
 
     <h3>9. Estado emocional y objetivo</h3>
-    <select><option>Seleccioná tu estado</option><option>Relajado/a</option><option>Tenso/a</option><option>Calmo/a</option></select><br/><br/>
-    <input type="text" placeholder="Objetivo del día (Ej: relajar hombros al respirar)" style="width: 100%; padding: 10px;" />
+    <select>
+      <option>Seleccioná tu estado</option>
+      <option>Relajado/a</option>
+      <option>Tenso/a</option>
+      <option>Calmo/a</option>
+    </select><br/><br/>
+    <input type="text" placeholder="Objetivo del día" style="width:100%;padding:10px;">
 
-    <br><br>
+    <br/><br/>
     <a href="TecnicasAnsiedad.html" class="boton">Volver a Técnicas</a>
   </div>
 
@@ -84,18 +84,19 @@
       const t = parseInt(form.tension.value);
       const r = parseInt(form.relajacion.value);
       let msg = "";
-      if (t === 0) msg = "Tu cuerpo se siente relajado, excelente señal de progreso.";
-      else if (t > 0 && r === 1) msg = "Muy bien, hiciste algo para soltar tensión corporal.";
-      else msg = "Recordá que soltar el cuerpo ayuda a calmar la mente. Mañana es una nueva oportunidad.";
+      if (t === 0) msg = "¡Excelente, tu cuerpo está tranquilo!";
+      else if (t > 0 && r === 1) msg = "Buen trabajo soltando tensión hoy.";
+      else msg = "La relajación ayuda: probá mañana de nuevo.";
       document.getElementById("resultadoMiniTest").innerText = msg;
     }
 
-    document.querySelectorAll('#checklist input[type="checkbox"]').forEach((box, i) => {
-      box.checked = localStorage.getItem('sem3check' + i) === 'true';
-      box.addEventListener('change', () => {
-        localStorage.setItem('sem3check' + i, box.checked);
+    document.querySelectorAll('#checklist input[type="checkbox"]').forEach((box,i) => {
+      box.checked = localStorage.getItem('sem3check'+i)==='true';
+      box.addEventListener('change',()=>{
+        localStorage.setItem('sem3check'+i,box.checked);
       });
     });
   </script>
 </body>
 </html>
+
