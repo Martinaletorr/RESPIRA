@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom, #e3f2fd, #ffffff); /* Celeste claro a blanco */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #2e2e2e;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 850px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  margin: 40px auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.4em;
+  color: #1565c0; /* Azul fuerte */
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #1976d2;
+  margin-top: 30px;
+}
+
+p, ul, blockquote {
+  font-size: 1.1em;
+  line-height: 1.7;
+}
+
+textarea, select, input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #90caf9;
+  margin-top: 10px;
+  font-size: 1em;
+  background-color: #ffffff;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.boton {
+  display: inline-block;
+  background-color: #64dd17; /* Verde neón */
+  color: #000000;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 25px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.boton:hover {
+  background-color: #00c853;
+  color: #ffffff;
+}
+
+blockquote {
+  background-color: #e3f2fd;
+  padding: 15px;
+  border-left: 5px solid #42a5f5;
+  margin-top: 20px;
+  font-style: italic;
+  color: #2e2e2e;
+  border-radius: 6px;
+}
