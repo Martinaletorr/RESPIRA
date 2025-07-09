@@ -3,95 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Semana 3 - Técnicas para la Ansiedad</title>
+  <title>Semana 3 – Resolución de Problemas</title>
   <link rel="stylesheet" href="semana3.css" />
 </head>
 <body>
   <div class="contenedor">
-    <h2>Semana 3: Liberá la Tensión de tu Cuerpo</h2>
-    <p>Esta semana trabajarás con la relajación muscular progresiva: tensar y soltar grupos musculares para liberar tensión.</p>
+    <h2>Semana 3: Técnica de Solución de Problemas</h2>
+    <p>Esta semana aprenderás una técnica estructurada para enfrentar desafíos cotidianos paso a paso.</p>
 
-    <h3>1. Introducción</h3>
-    <p>Aprenderás a relajar cada zona del cuerpo de manera consciente, ayudando a reducir la activación nerviosa.</p>
+    <h3>1. ¿Qué es?</h3>
+    <p>La solución de problemas es un método de terapia cognitivo‑conductual para abordar situaciones difíciles de forma sistemática.</p>
 
-   <h3>2. Video Explicativo</h3>
-<p>Seguí esta guía paso a paso para realizar la técnica correctamente:</p>
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/j46bwtBh-00" title="Relajación muscular progresiva - técnica guiada" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h3>2. Video explicativo</h3>
+    <p>Mirá esta guía que explica los pasos esenciales de la técnica:</p>
+    <iframe width="100%" height="315"
+      src="https://www.youtube.com/embed/uFw6eiqBOv4"
+      title="Terapia de Solución de Problemas (TCC)"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
 
+    <p style="font-size: 0.9em; color: #777;">Fuente: Canal de YouTube “Psicología y Mente” – Video utilizado con fines educativos.</p>
 
-    <h3>3. Práctica diaria</h3>
-    <ul>
-      <li>Tensá los músculos de la cara durante 5 s, luego soltá.</li>
-      <li>Repetí con cuello, hombros, brazos, pecho, abdomen, piernas y pies.</li>
-      <li>Respirá profundo entre cada ciclo y observá qué sentís.</li>
-    </ul>
+    <h3>3. Pasos a seguir</h3>
+    <ol>
+      <li><strong>Identificar el problema</strong> claramente.</li>
+      <li><strong>Generar varias soluciones</strong> (sin juzgar).</li>
+      <li><strong>Evaluar cada opción</strong> (pros y contras).</li>
+      <li><strong>Elegir una solución</strong> y planificarla.</li>
+      <li><strong>Implementarla</strong> y luego revisar los resultados.</li>
+    </ol>
 
-    <h3>4. Diario emocional</h3>
-    <textarea rows="4" cols="50" placeholder="¿Cómo te sentiste antes y después?"></textarea>
+    <h3>4. Ejercicio práctico guiado</h3>
+    <p>Completá cada paso para aplicar la técnica de resolución de problemas:</p>
 
-    <h3>5. Frase motivacional</h3>
-    <blockquote><em>"Aflojá el cuerpo, relajá la mente. Cada músculo relajado es un paso hacia la calma."</em></blockquote>
+    <label><strong>1. ¿Cuál es el problema que querés resolver?</strong></label><br/>
+    <textarea id="problema" rows="2" cols="60" placeholder="Ej: No puedo concentrarme al estudiar."></textarea><br/><br/>
 
-    <h3>6. ¿Sabías que...?</h3>
-<p>La relajación muscular progresiva reduce los niveles de cortisol y disminuye significativamente la sensación de tensión física y mental.</p>
+    <label><strong>2. Generá al menos 3 posibles soluciones:</strong></label><br/>
+    <textarea id="sol1" rows="2" cols="60" placeholder="Solución 1..."></textarea><br/>
+    <textarea id="sol2" rows="2" cols="60" placeholder="Solución 2..."></textarea><br/>
+    <textarea id="sol3" rows="2" cols="60" placeholder="Solución 3..."></textarea><br/><br/>
 
+    <label><strong>3. Elegí la mejor opción y explicá por qué:</strong></label><br/>
+    <textarea id="eleccion" rows="2" cols="60" placeholder="Me parece mejor la opción... porque..."></textarea><br/><br/>
 
-    <h3>7. Mini‑test</h3>
+    <label><strong>4. Planificá cómo vas a implementarla:</strong></label><br/>
+    <textarea id="plan" rows="2" cols="60" placeholder="Qué vas a hacer, cuándo, con quién, etc."></textarea><br/><br/>
+
+    <label><strong>5. ¿Qué resultado esperás?</strong></label><br/>
+    <textarea id="resultado" rows="2" cols="60" placeholder="Ej: Sentirme más enfocado y rendir mejor."></textarea><br/><br/>
+
+    <button class="boton" onclick="verResultadoEjercicio()">Ver resultado</button>
+    <div id="feedbackEjercicio" style="margin-top: 15px; font-weight: bold;"></div>
+
+    <h3>5. Diario emocional</h3>
+    <textarea rows="4" cols="50" placeholder="¿Cómo te sentiste al aplicar la técnica?"></textarea>
+
+    <h3>6. Frase motivacional</h3>
+    <blockquote><em>"Cada problema tiene solución cuando lo desarmás en pasos más pequeños."</em></blockquote>
+
+    <h3>7. Mini‑test del día</h3>
     <form id="miniTest">
       <label>¿Te sentiste tenso/a hoy?</label><br/>
       <select name="tension">
         <option value="0">No</option>
         <option value="1">Un poco</option>
-        <option value="2">Mucho</option>
+        <option value="2">Bastante</option>
+        <option value="3">Mucho</option>
       </select><br/><br/>
-      <label>¿Hiciste la relajación?</label><br/>
-      <select name="relajacion">
+
+      <label>¿Pudiste identificar la causa del problema?</label><br/>
+      <select name="zona">
         <option value="0">No</option>
-        <option value="1">Sí</option>
+        <option value="1">Sí, parcialmente</option>
+        <option value="2">Sí, claramente</option>
       </select><br/><br/>
+
+      <label>¿Aplicaste la técnica hoy?</label><br/>
+      <select name="resolvio">
+        <option value="0">No</option>
+        <option value="1">Sí, brevemente</option>
+        <option value="2">Sí, de forma completa</option>
+      </select><br/><br/>
+
       <button type="button" onclick="calcularMiniTest()">Ver resultado</button>
     </form>
-    <div id="resultadoMiniTest" style="margin-top:15px;"></div>
+    <div id="resultadoMiniTest" style="margin-top:15px; font-weight: bold;"></div>
 
     <h3>8. Checklist de práctica</h3>
     <form id="checklist">
-      <label><input type="checkbox"> Vi el video</label><br/>
-      <label><input type="checkbox"> Practiqué la técnica</label><br/>
-      <label><input type="checkbox"> Escribí en el diario</label>
+      <label><input type="checkbox" /> Vi el video</label><br/>
+      <label><input type="checkbox" /> Hice el ejercicio práctico</label><br/>
+      <label><input type="checkbox" /> Escribí en el diario emocional</label>
     </form>
-
-    <h3>9. Estado emocional y objetivo</h3>
-    <select>
-      <option>Seleccioná tu estado</option>
-      <option>Relajado/a</option>
-      <option>Tenso/a</option>
-      <option>Calmo/a</option>
-    </select><br/><br/>
-    <input type="text" placeholder="Objetivo del día" style="width:100%;padding:10px;">
 
     <br/><br/>
     <a href="TecnicasAnsiedad.html" class="boton">Volver a Técnicas</a>
   </div>
 
   <script>
-    function calcularMiniTest() {
-      const form = document.getElementById('miniTest');
-      const t = parseInt(form.tension.value);
-      const r = parseInt(form.relajacion.value);
-      let msg = "";
-      if (t === 0) msg = "¡Excelente, tu cuerpo está tranquilo!";
-      else if (t > 0 && r === 1) msg = "Buen trabajo soltando tensión hoy.";
-      else msg = "La relajación ayuda: probá mañana de nuevo.";
-      document.getElementById("resultadoMiniTest").innerText = msg;
+    function verResultadoEjercicio() {
+      const campos = [
+        document.getElementById('problema').value.trim(),
+        document.getElementById('sol1').value.trim(),
+        document.getElementById('sol2').value.trim(),
+        document.getElementById('sol3').value.trim(),
+        document.getElementById('eleccion').value.trim(),
+        document.getElementById('plan').value.trim(),
+        document.getElementById('resultado').value.trim()
+      ];
+
+      const completados = campos.filter(c => c !== "").length;
+      let mensaje = "";
+
+      if (completados === 7) {
+        mensaje = "¡Excelente! Aplicaste todos los pasos. Estás resolviendo tus problemas con claridad.";
+      } else if (completados >= 4) {
+        mensaje = "Muy bien, estás avanzando. Completá los pasos que te faltan para reforzar la técnica.";
+      } else {
+        mensaje = "Recordá que identificar el problema y pensar posibles soluciones es un gran comienzo. ¡Seguí practicando!";
+      }
+
+      document.getElementById("feedbackEjercicio").innerText = mensaje;
     }
 
-    document.querySelectorAll('#checklist input[type="checkbox"]').forEach((box,i) => {
-      box.checked = localStorage.getItem('sem3check'+i)==='true';
-      box.addEventListener('change',()=>{
-        localStorage.setItem('sem3check'+i,box.checked);
+    function calcularMiniTest() {
+      const form = document.getElementById('miniTest');
+      const tension = parseInt(form.tension.value);
+      const zona = parseInt(form.zona.value);
+      const resolvio = parseInt(form.resolvio.value);
+      const puntaje = (3 - tension) + zona + resolvio;
+
+      let mensaje = "";
+      if (puntaje >= 7) {
+        mensaje = "¡Muy bien! Estás aplicando la técnica de forma efectiva y afrontando tus problemas con claridad.";
+      } else if (puntaje >= 5) {
+        mensaje = "Buen trabajo. Vas por el camino correcto. Seguí identificando la causa de tus preocupaciones y practicando.";
+      } else {
+        mensaje = "Acordate que cuanto más apliques la técnica, mejor te vas a sentir. ¡Animate a intentarlo mañana!";
+      }
+
+      document.getElementById("resultadoMiniTest").innerText = mensaje;
+    }
+
+    document.querySelectorAll('#checklist input[type="checkbox"]').forEach((box, i) => {
+      box.checked = localStorage.getItem('sem3check' + i) === 'true';
+      box.addEventListener('change', () => {
+        localStorage.setItem('sem3check' + i, box.checked);
       });
     });
   </script>
 </body>
 </html>
-
