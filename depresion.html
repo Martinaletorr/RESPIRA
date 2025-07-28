@@ -2,118 +2,69 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Evaluación de Depresión - PHQ-9</title>
-  <link rel="stylesheet" href="estilos.css" />
+  <link rel="stylesheet" href="stylo.css" />
 </head>
 <body>
   <div class="contenedor">
     <h2>Evaluación de Depresión (PHQ-9)</h2>
-    <p>Ahora continuamos con el formulario sobre la depresión.</p>
-    <p>Indicá con qué frecuencia experimentaste lo siguiente en las últimas 2 semanas:</p>
-
     <form id="formularioPHQ">
+      <p>Indicá con qué frecuencia has experimentado lo siguiente en las últimas 2 semanas:</p>
 
-      <!-- Preguntas PHQ-9 -->
-      <div class="pregunta">
-        <label>1. Poco interés o placer por hacer cosas:</label><br />
-        <select name="q1">
-          <option value="0">Nunca</option>
-          <option value="1">Varios días</option>
-          <option value="2">Más de la mitad de los días</option>
-          <option value="3">Casi todos los días</option>
-        </select>
+      <!-- Preguntas del PHQ-9 -->
+      <div class="pregunta"><label>1. Poco interés o placer en hacer cosas:</label><br/>
+        <select name="q1"><option value="0">Nunca</option><option value="1">Varios días</option><option value="2">Más de la mitad de los días</option><option value="3">Casi todos los días</option></select>
       </div>
 
-      <div class="pregunta">
-        <label>2. Sentirse deprimido, decaído o sin esperanzas:</label><br />
-        <select name="q2">
-          <option value="0">Nunca</option>
-          <option value="1">Varios días</option>
-          <option value="2">Más de la mitad de los días</option>
-          <option value="3">Casi todos los días</option>
-        </select>
+      <div class="pregunta"><label>2. Sentirse decaído/a, deprimido/a o sin esperanzas:</label><br/>
+        <select name="q2"><option value="0">Nunca</option><option value="1">Varios días</option><option value="2">Más de la mitad de los días</option><option value="3">Casi todos los días</option></select>
       </div>
 
-      <div class="pregunta">
-        <label>3. Dificultad para dormir o dormir demasiado:</label><br />
-        <select name="q3">
-          <option value="0">Nunca</option>
-          <option value="1">Varios días</option>
-          <option value="2">Más de la mitad de los días</option>
-          <option value="3">Casi todos los días</option>
-        </select>
+      <div class="pregunta"><label>3. Dificultad para dormir o dormir en exceso:</label><br/>
+        <select name="q3"><option value="0">Nunca</option><option value="1">Varios días</option><option value="2">Más de la mitad de los días</option><option value="3">Casi todos los días</option></select>
       </div>
 
-      <div class="pregunta">
-        <label>4. Sentirse cansado o tener poca energía:</label><br />
-        <select name="q4">
-          <option value="0">Nunca</option>
-          <option value="1">Varios días</option>
-          <option value="2">Más de la mitad de los días</option>
-          <option value="3">Casi todos los días</option>
-        </select>
+      <div class="pregunta"><label>4. Sentirse cansado/a o con poca energía:</label><br/>
+        <select name="q4"><option value="0">Nunca</option><option value="1">Varios días</option><option value="2">Más de la mitad de los días</option><option value="3">Casi todos los días</option></select>
       </div>
 
-      <div class="pregunta">
-        <label>5. Poco apetito o comer en exceso:</label><br />
-        <select name="q5">
-          <option value="0">Nunca</option>
-          <option value="1">Varios días</option>
-          <option value="2">Más de la mitad de los días</option>
-          <option value="3">Casi todos los días</option>
-        </select>
+      <div class="pregunta"><label>5. Falta de apetito o comer en exceso:</label><br/>
+        <select name="q5"><option value="0">Nunca</option><option value="1">Varios días</option><option value="2">Más de la mitad de los días</option><option value="3">Casi todos los días</option></select>
       </div>
 
-      <div class="pregunta">
-        <label>6. Sentirse mal consigo mismo, sentirse fracasado o haber decepcionado:</label><br />
-        <select name="q6">
-          <option value="0">Nunca</option>
-          <option value="1">Varios días</option>
-          <option value="2">Más de la mitad de los días</option>
-          <option value="3">Casi todos los días</option>
-        </select>
+      <div class="pregunta"><label>6. Sentirse mal consigo mismo/a o que ha fallado:</label><br/>
+        <select name="q6"><option value="0">Nunca</option><option value="1">Varios días</option><option value="2">Más de la mitad de los días</option><option value="3">Casi todos los días</option></select>
       </div>
 
-      <div class="pregunta">
-        <label>7. Dificultad para concentrarse, por ejemplo al leer el diario o ver la televisión:</label><br />
-        <select name="q7">
-          <option value="0">Nunca</option>
-          <option value="1">Varios días</option>
-          <option value="2">Más de la mitad de los días</option>
-          <option value="3">Casi todos los días</option>
-        </select>
+      <div class="pregunta"><label>7. Dificultad para concentrarse:</label><br/>
+        <select name="q7"><option value="0">Nunca</option><option value="1">Varios días</option><option value="2">Más de la mitad de los días</option><option value="3">Casi todos los días</option></select>
       </div>
 
-      <div class="pregunta">
-        <label>8. Moverse o hablar tan lento que otras personas podrían notarlo o, por el contrario, estar muy inquieto o agitado:</label><br />
-        <select name="q8">
-          <option value="0">Nunca</option>
-          <option value="1">Varios días</option>
-          <option value="2">Más de la mitad de los días</option>
-          <option value="3">Casi todos los días</option>
-        </select>
+      <div class="pregunta"><label>8. Hablar o moverse tan lento que otros lo notan o lo opuesto (inquietud):</label><br/>
+        <select name="q8"><option value="0">Nunca</option><option value="1">Varios días</option><option value="2">Más de la mitad de los días</option><option value="3">Casi todos los días</option></select>
       </div>
 
-      <div class="pregunta">
-        <label>9. Pensamientos de que sería mejor estar muerto o hacerse daño de alguna manera:</label><br />
-        <select name="q9">
-          <option value="0">Nunca</option>
-          <option value="1">Varios días</option>
-          <option value="2">Más de la mitad de los días</option>
-          <option value="3">Casi todos los días</option>
-        </select>
+      <div class="pregunta"><label>9. Pensamientos de que estaría mejor muerto/a o hacerse daño:</label><br/>
+        <select name="q9"><option value="0">Nunca</option><option value="1">Varios días</option><option value="2">Más de la mitad de los días</option><option value="3">Casi todos los días</option></select>
       </div>
 
       <button type="button" class="boton" onclick="calcularPHQ()">Ver resultado</button>
     </form>
 
-    <div id="resultado" style="margin-top: 20px;"></div>
+    <!-- Resultado -->
+    <div id="resultadoPHQ" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <!-- Botones -->
+    <div id="botonesExtrasPHQ" style="margin-top: 30px;">
+      <a href="index.html" class="boton">Volver a principal</a>
+      <a href="TecnicasAnsiedad.html" class="boton">Ver técnicas para la ansiedad</a>
+    </div>
   </div>
 
   <script>
     function calcularPHQ() {
-      const form = document.getElementById('formularioPHQ');
+      const form = document.getElementById("formularioPHQ");
       let total = 0;
       for (let i = 1; i <= 9; i++) {
         total += parseInt(form["q" + i].value);
@@ -126,9 +77,10 @@
       else if (total <= 19) nivel = "Depresión moderadamente grave";
       else nivel = "Depresión grave";
 
-      document.getElementById("resultado").innerHTML =
+      document.getElementById("resultadoPHQ").innerHTML =
         `<p><strong>Puntaje total:</strong> ${total} / 27</p><p><strong>Nivel:</strong> ${nivel}</p>`;
     }
   </script>
 </body>
 </html>
+
