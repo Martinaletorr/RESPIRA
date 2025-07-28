@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semana 4 – Exposición Gradual</title>
+  <link rel="stylesheet" href="semana4.css" />
+</head>
+<body>
+  <div class="contenedor">
+    <h2>Semana 4: Exposición Gradual a Situaciones Evitadas</h2>
+    <p>Esta semana aprenderás a enfrentar situaciones que has evitado, de forma progresiva y segura.</p>
+
+    <h3>1. ¿Qué es?</h3>
+    <p>La exposición gradual consiste en acercarse paso a paso a aquello que genera ansiedad, de forma controlada, hasta habituarse y reducir la respuesta de miedo.</p>
+
+    <h3>2. Video Explicativo</h3>
+    <p>Este video explica cómo planificar y realizar la exposición paso a paso:</p>
+    <iframe width="100%" height="315"
+      src="https://www.youtube.com/embed/X6PQ_YMTBckk"
+      title="Cómo usar la exposición y desensibilización sistemática – Psicólogo Emocional"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+    <p><small>Fuente: <a href="https://www.youtube.com/watch?v=X6PQ_YMTBckk" target="_blank" rel="noopener">Psicólogo Emocional en YouTube</a></small></p>
+
+    <h3>3. Pasos de la técnica</h3>
+    <ol>
+      <li>Identificá la situación evitada.</li>
+      <li>Desglosala en pasos de menor a mayor dificultad.</li>
+      <li>Practicalos en orden, empezando por el más fácil.</li>
+      <li>Mantenete en cada paso hasta sentir menos ansiedad.</li>
+      <li>Avanzá al siguiente nivel.</li>
+    </ol>
+
+    <h3>4. Ejercicio práctico</h3>
+    <p>Escribí tu propia jerarquía de exposición:</p>
+    <textarea id="etapas" rows="5" cols="60" placeholder="Paso 1: ...&#10;Paso 2: ...&#10;Paso 3: ..."></textarea><br/><br/>
+    <button class="boton" onclick="guardarJerarquia()">Guardar jerarquía</button>
+    <div id="feedbackJerarquia" style="margin-top:15px;font-weight:bold;"></div>
+
+    <script>
+      function guardarJerarquia(){
+        const etapas = document.getElementById('etapas').value.trim();
+        if(etapas) {
+          document.getElementById('feedbackJerarquia').innerText = "¡Muy bien! Jerarquía guardada. Comenzá con el primer paso.";
+        } else {
+          document.getElementById('feedbackJerarquia').innerText = "Por favor, completá los pasos.";
+        }
+      }
+    </script>
+
+    <h3>5. Diario emocional</h3>
+    <textarea rows="4" cols="50" placeholder="¿Cómo te sentiste al enfrentar cada paso?"></textarea>
+
+    <h3>6. Frase motivacional</h3>
+    <blockquote><em>"El miedo disminuye cuando lo enfrentás con pequeños pasos valientes."</em></blockquote>
+
+    <h3>7. Mini‑test del día</h3>
+    <form id="miniTest4">
+      <label>¿Avanzaste hoy en tu jerarquía?</label><br/>
+      <select name="avanzaste">
+        <option value="0">No</option>
+        <option value="1">Sí, en el paso más fácil</option>
+        <option value="2">Sí, en varios pasos</option>
+      </select><br><br/>
+      <button type="button" onclick="calcularMiniTest4()">Ver resultado</button>
+    </form>
+    <div id="resultadoMiniTest4" style="margin-top:15px;"></div>
+
+    <script>
+      function calcularMiniTest4(){
+        const value = parseInt(document.getElementById('miniTest4').avanzaste.value);
+        let msg = "";
+        if(value === 2) msg = "¡Genial! Avanzaste varios pasos, tu progreso es real.";
+        else if(value === 1) msg = "Buen trabajo, comenzaste con el paso inicial.";
+        else msg = "Recordá que avanzar incluso un paso es un éxito. ¡Mañana podés intentar de nuevo!";
+        document.getElementById('resultadoMiniTest4').innerText = msg;
+      }
+    </script>
+
+    <h3>8. Checklist de práctica</h3>
+    <form id="checklist4">
+      <label><input type="checkbox" /> Vi el video</label><br/>
+      <label><input type="checkbox" /> Completé jerarquía</label><br/>
+      <label><input type="checkbox" /> Avancé en un paso hoy</label>
+    </form>
+
+    <script>
+      document.querySelectorAll('#checklist4 input[type="checkbox"]').forEach((box,i)=>{
+        box.checked = localStorage.getItem('sem4check'+i)==='true';
+        box.addEventListener('change',()=>localStorage.setItem('sem4check'+i,box.checked));
+      });
+    </script>
+
+    <br/><br/>
+    <a href="TecnicasAnsiedad.html" class="boton">Volver a Técnicas</a>
+  </div>
+</body>
+</html>
+
+
